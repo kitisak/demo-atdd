@@ -6,6 +6,9 @@ Test Template    Flow of Convert Score to Grade A
 Test Teardown    Back to convert grade
 Default Tags    requirment_01
 
+*** Variables ***
+${URL}    http://150.107.29.56:8080/grade/
+
 *** Testcases ***
 Case 001      100
 Case 002      80
@@ -19,10 +22,10 @@ Flow of Convert Score to Grade A
   User should see You Got Grade A
 
 Back to convert grade
-  Go To    http://localhost:8080/grade/
+  Go To    ${URL}
 
 Open convert grade
-  Open Browser    http://localhost:8080/grade/
+  Open Browser    ${URL}
 
 Input Score
   [Arguments]    ${score}
